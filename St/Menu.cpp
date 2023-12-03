@@ -54,10 +54,10 @@ void Menu::average_stud() {
 			fl = true;
 		}
 		catch (...) {
-			cout << "Enter avarage mark" << endl;
+			cout << "Введите среднюю оценку: " << endl;
 		}
 	}
-	cout << "List of students whose average mark more than " << num << ":" << endl;
+	cout << "Список студентов, чей средний балл превышает " << num << ":" << endl;
 	int flag = 0;
 	bool emp = true;
 	for (int i = 0; i < count; i++) {
@@ -69,32 +69,31 @@ void Menu::average_stud() {
 				}
 					if (flag == 1) {
 						flag = 2;
-						cout << "Group number:" << list[i].get_number() << endl;
+						cout << "Номер группы:" << list[i].get_number() << endl;
 					}
 				list[i].get_data()[j].show();
 			}
 		}
 		if (flag != 0) emp = false;
 	}
-	if (emp == true) cout << "There are no such students" << endl;
+	if (emp == true) cout << "Таких студентов нет" << endl;
 }
 int Menu::show_options()
 {
 	int c1;
-	cout << "\nWhat do you want to do?" << endl;
-	cout << "Task #1" << endl;
-	cout << "1 - Show all groups" << endl;
-	cout << "2 - Add group" << endl;
-	cout << "3 - Add new student" << endl;
-	cout << "4 - Delete a group" << endl;
-	cout << "5 - Delete a student" << endl;
-	cout << "6 - Displaying all students whose average mark is greater than the specified one; " << endl;
-	cout << "7 - Redact group" << endl;
-	cout << "8 - Redact student" << endl;
-	//To work correctly, you need to enter a real number, with two numbers after the dot
-	cout << "Task #2" << endl;
-	cout << "9 - File Scan" << endl;
-	cout << "0 - Exit" << endl;
+	cout << "Задание №1" << endl;
+	cout << "1 - Показать все группы" << endl;
+	cout << "2 - Добавить группу" << endl;
+	cout << "3 - Добавить нового студента" << endl;
+	cout << "4 - Удалить группу" << endl;
+	cout << "5 - Удалить студента" << endl;
+	cout << "6 - Отображение всех студентов, чей средний балл больше заданного; " << endl;
+	cout << "7 - Изменить группу" << endl;
+	cout << "8 - Изменить студента" << endl;
+	//Для корректной работы необходимо ввести действительное число с двумя цифрами после точки
+	cout << "Задание №2" << endl;
+	cout << "9 - Сканирование файла" << endl;
+	cout << "0 - Выход" << endl;
 	cout << "-> ";
 	cin >> c1;
 	return c1;
@@ -103,7 +102,7 @@ void Menu::show_all()
 {
 	try {
 		if (count == 0) {
-			throw "There's nothing to show.";
+			throw "Нечего показывать";
 		}
 		for (int i = 0; i < count; i++) {
 			cout << "_" << endl;
@@ -126,7 +125,7 @@ void Menu::add_new_stud() {
 			fl = true;
 		}
 		catch (...) {
-			cout << "Enter the number of group" << endl;
+			cout << "Введите номер группы" << endl;
 		}
 	}
 
@@ -136,10 +135,10 @@ void Menu::add_new_stud() {
 	this->list[num - 1].insert(student);
 }
 void Menu::delete_student() {
-	cout << "Enter number of group" << endl;
+	cout << "Введите номер группы" << endl;
 	int num;
 	cin >> num;
-	cout << "Enter number of student" << endl;
+	cout << "Введите номер студента" << endl;
 	int ind;
 	cin >> ind;
 	this->list[num - 1].insert(ind - 1);
@@ -157,7 +156,7 @@ void Menu::add_new_group() {
 			fl = true;
 		}
 		catch (...) {
-			cout << "Enter the number of group" << endl;
+			cout << "Введите номер группы" << endl;
 		}
 	}
 
@@ -177,7 +176,7 @@ void Menu::delete_group() {
 	int ind;
 	Group backup;
 	Group* buff;
-	cout << "Enter number: ";
+	cout << "Введите число: ";
 	cin >> ind;
 	ind -= 1;
 	for (int i = ind; i < count - 1; i++) {
@@ -206,10 +205,9 @@ void Menu::red_group() {
 				fl = true;
 		}
 		catch (...) {
-			cout << "Enter the number of group" << endl;
-		}
+			cout << "Введите номер группы" << endl;		}
 	}
-	cout << "Enter new number:" << endl;
+	cout << "Введите новое число:" << endl;
 	fl = false;
 	int num_n = 0;
 	while (fl == false) {
@@ -219,7 +217,7 @@ void Menu::red_group() {
 			fl = true;
 		}
 		catch (...) {
-			cout << "Enter new number of group" << endl;
+			cout << "Введите новый номер группы" << endl;
 		}
 	}
 	list[num - 1].set_number(num_n);
@@ -236,7 +234,7 @@ void Menu::red_student() {
 			fl = true;
 		}
 		catch (...) {
-			cout << "Enter the number of group" << endl;
+			cout << "Введите номер группы" << endl;
 		}
 	}
 	int num_stud = 0;
@@ -248,7 +246,7 @@ void Menu::red_student() {
 			fl = true;
 		}
 		catch (...) {
-			cout << "Enter the number of student" << endl;
+			cout << "Введите номер студента" << endl;
 		}
 	}
 	list[num - 1].get_data()[num_stud - 1].rewrite();

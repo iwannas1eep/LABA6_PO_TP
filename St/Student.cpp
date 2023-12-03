@@ -6,7 +6,7 @@ Student::Student(string new_name) {
 	name = new_name;
 	mark = nullptr;
 	size = 0;
-	cout << "---Constructor Student with attributes was called---" << endl;
+	cout << "!√руппа конструкторов была вызвана" << endl;
 }
 Student::~Student() {
 	cout << "---Destructor was called---" << endl;
@@ -15,7 +15,7 @@ Student::Student(const Student& Student_copy) {
 	name = Student_copy.name;
 	mark = Student_copy.mark;
 	size = Student_copy.size;
-	cout << "---Copy constructor Student was called---" << endl;
+	cout << "!√руппа деструкторов была вызвана" << endl;
 }
 string Student::get_name() const { return name; }
 int* Student::get_mark() const { return mark; }
@@ -31,8 +31,8 @@ float Student::av_mark() {
 	return res / size;
 }
 void Student::show() {
-	cout << "Name: " << name << endl;
-	cout << "Marks: ";
+	cout << "»м€: " << name << endl;
+	cout << "ќценки: ";
 	for (int i = 0; i < size; i++) {
 		cout << *(mark + i) << " ";
 	}
@@ -40,15 +40,15 @@ void Student::show() {
 }
 void Student::rewrite() {
 	cin.ignore(32767, '\n');
-	cout << "Input new name: ";
+	cout << "¬ведите новое им€: ";
 	getline(cin, name);
 
-	cout << "Input number of marks: ";
+	cout << "¬ведите количество знаков: ";
 	cin >> size;
 
-	//delete mark;
+	//удалить оценку;
 	mark = new int[size];
-	cout << "Input marks ";
+	cout << "¬ведите оценки: ";
 	for (int i = 0; i < size; i++)
 	{
 		cin >> *(mark + i);
