@@ -67,10 +67,10 @@ void Menu::average_stud() {
 				if (flag == 0) {
 					flag = 1;
 				}
-					if (flag == 1) {
-						flag = 2;
-						cout << "Номер группы:" << list[i].get_number() << endl;
-					}
+				if (flag == 1) {
+					flag = 2;
+					cout << "Номер группы:" << list[i].get_number() << endl;
+				}
 				list[i].get_data()[j].show();
 			}
 		}
@@ -80,6 +80,8 @@ void Menu::average_stud() {
 }
 int Menu::show_options()
 {
+	system("pause");
+	system ("cls");
 	int c1;
 	cout << "Задание №1" << endl;
 	cout << "1 - Показать все группы" << endl;
@@ -90,7 +92,6 @@ int Menu::show_options()
 	cout << "6 - Отображение всех студентов, чей средний балл больше заданного; " << endl;
 	cout << "7 - Изменить группу" << endl;
 	cout << "8 - Изменить студента" << endl;
-	//Для корректной работы необходимо ввести действительное число с двумя цифрами после точки
 	cout << "Задание №2" << endl;
 	cout << "9 - Сканирование файла" << endl;
 	cout << "0 - Выход" << endl;
@@ -102,7 +103,7 @@ void Menu::show_all()
 {
 	try {
 		if (count == 0) {
-			throw "Нечего показывать";
+			throw "Пусто!";
 		}
 		for (int i = 0; i < count; i++) {
 			cout << "_" << endl;
@@ -120,7 +121,7 @@ void Menu::add_new_stud() {
 	while (fl == false)
 	{
 		try {
-			getline(cin, back);
+			cin >>back;
 			num = stoi(back);
 			fl = true;
 		}
@@ -202,10 +203,11 @@ void Menu::red_group() {
 		try {
 			getline(cin, back);
 			num = stoi(back);
-				fl = true;
+			fl = true;
 		}
 		catch (...) {
-			cout << "Введите номер группы" << endl;		}
+			cout << "Введите номер группы" << endl;
+		}
 	}
 	cout << "Введите новое число:" << endl;
 	fl = false;

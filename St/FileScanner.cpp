@@ -1,6 +1,6 @@
 #include "lib.h"
-FileScanner::FileScanner() { cout << "---Constructor FileScanner was called---" << endl; }
-FileScanner::~FileScanner() { cout << "---Destructor FileScanner was called---" << endl; }
+FileScanner::FileScanner() { cout << "!Конструктор FileScanner был вызван" << endl; }
+FileScanner::~FileScanner() { cout << "!Деструктор FileScanner был вызван" << endl; }
 void FileScanner::scan_text()
 {
 	try
@@ -18,6 +18,6 @@ void FileScanner::scan_text()
 			}
 		}
 	}
-	catch (const char* ex) { cout << "Error: " << ex << endl; }
+	catch (const char* ex) { cout << "Ошибка: " << ex << endl; }
 	cout << endl;
 }
