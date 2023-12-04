@@ -129,7 +129,6 @@ void Menu::add_new_stud() {
 			cout << "Введите номер группы" << endl;
 		}
 	}
-
 	Student* student;
 	student = new Student;
 	student->rewrite();
@@ -209,7 +208,7 @@ void Menu::red_group() {
 			cout << "Введите номер группы" << endl;
 		}
 	}
-	cout << "Введите новое число:" << endl;
+	cout << "Введите номер группы:" << endl;
 	fl = false;
 	int num_n = 0;
 	while (fl == false) {
@@ -251,8 +250,31 @@ void Menu::red_student() {
 			cout << "Введите номер студента" << endl;
 		}
 	}
-	list[num - 1].get_data()[num_stud - 1].rewrite();
+	// Запрос нового имени для студента
+	string new_name;
+	cout << "Введите новое имя студента: ";
+	getline(cin, new_name);
+	list[num - 1].get_data()[num_stud - 1].set_name(new_name);
+
+	// Запрос нового номера для студента
+	int new_id;
+	cout << "Введите новый номер студента: ";
+	cin >> new_id;
+	list[num - 1].get_data()[num_stud - 1].ind(new_id);
+
+	// Запрос нового количества оценок и самих оценок для студента
+	int new_size;
+	cout << "Введите новое количество оценок: ";
+	cin >> new_size;
+	int* new_marks = new int[new_size];
+	cout << "Введите новые оценки: ";
+	for (int i = 0; i < new_size; i++) {
+		cin >> new_marks[i];
+	}
+	list[num - 1].get_data()[num_stud - 1].set_size(new_size);
+	list[num - 1].get_data()[num_stud - 1].set_mark(new_marks);
 }
+
 void Menu::exit_from_programm()
 {
 	exit = 0;

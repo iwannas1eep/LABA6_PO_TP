@@ -39,10 +39,10 @@ void Student::show() {
 }
 void Student::rewrite() {
 	cin.ignore(32767, '\n');
-	cout << "Введите новое имя: ";
+	cout << "Введите имя: ";
 	getline(cin, name);
 
-	cout << "Введите количество знаков: ";
+	cout << "Введите количество оценок: ";
 	cin >> size;
 
 	mark = new int[size];
