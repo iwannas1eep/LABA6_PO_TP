@@ -1,23 +1,20 @@
+#include "FileScanner.h"
 #include "lib.h"
-FileScanner::FileScanner() { /*cout << "!Конструктор FileScanner был вызван" << endl;*/ }
-FileScanner::~FileScanner() { /*cout << "!Деструктор FileScanner был вызван" << endl; */ }
+FileScanner::FileScanner() {}
+
+FileScanner::~FileScanner() {}
+
 void FileScanner::scan_text()
 {
-	try
-	{
-		ifstream inp("data.txt");
-		while (inp.peek() != EOF) {
-			string first;
-			string second;
-			inp >> first >> second;
-			if (!first.empty() && !second.empty()) {
-				cout << second << ' ' << first << ' ';
-			}
-			else {
-				cout << first;
-			}
-		}
-	}
-	catch (const char* ex) { cout << "Ошибка: " << ex << endl; }
-	cout << endl;
+   ifstream inp("data.txt");
+   string first;
+   string second;
+   while (inp >> first >> second) {
+       if (!first.empty() && !second.empty()) {
+           cout << second << ' ' << first << ' ' << endl;
+       }
+       else {
+           cout << first << endl;
+       }
+   }
 }
