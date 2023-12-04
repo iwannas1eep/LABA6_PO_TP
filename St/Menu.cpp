@@ -83,7 +83,7 @@ int Menu::show_options()
 	system("pause");
 	system ("cls");
 	int c1;
-	cout << "Задание №1" << endl;
+	cout << "Задание 1" << endl;
 	cout << "1 - Показать все группы" << endl;
 	cout << "2 - Добавить группу" << endl;
 	cout << "3 - Добавить нового студента" << endl;
@@ -92,7 +92,7 @@ int Menu::show_options()
 	cout << "6 - Отображение всех студентов, чей средний балл больше заданного; " << endl;
 	cout << "7 - Изменить группу" << endl;
 	cout << "8 - Изменить студента" << endl;
-	cout << "Задание №2" << endl;
+	cout << "Задание 2" << endl;
 	cout << "9 - Сканирование файла" << endl;
 	cout << "0 - Выход" << endl;
 	cout << "-> ";

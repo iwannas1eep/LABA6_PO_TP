@@ -1,6 +1,6 @@
 #include "lib.h"
-FileScanner::FileScanner() { cout << "!Конструктор FileScanner был вызван" << endl; }
-FileScanner::~FileScanner() { cout << "!Деструктор FileScanner был вызван" << endl; }
+FileScanner::FileScanner() { /*cout << "!Конструктор FileScanner был вызван" << endl;*/ }
+FileScanner::~FileScanner() { /*cout << "!Деструктор FileScanner был вызван" << endl; */ }
 void FileScanner::scan_text()
 {
 	try
