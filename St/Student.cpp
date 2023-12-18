@@ -1,20 +1,21 @@
 #include "lib.h"
-Student::Student() {
+Student::Student() { /*cout << "---Constructor Student without attributes was called---" <<
+endl;*/
 }
 Student::Student(string new_name) {
 	name = new_name;
 	mark = nullptr;
 	size = 0;
-	//cout << "!Группа конструкторов была вызвана" << endl;
+	cout << "!Группа конструкторов была вызвана" << endl;
 }
 Student::~Student() {
-	//cout << "!Деструктор был вызван" << endl;
+	cout << "---Destructor was called---" << endl;
 }
 Student::Student(const Student& Student_copy) {
 	name = Student_copy.name;
 	mark = Student_copy.mark;
 	size = Student_copy.size;
-	//cout << "!Группа деструкторов была вызвана" << endl;
+	cout << "!Группа деструкторов была вызвана" << endl;
 }
 string Student::get_name() const { return name; }
 int* Student::get_mark() const { return mark; }
@@ -39,12 +40,13 @@ void Student::show() {
 }
 void Student::rewrite() {
 	cin.ignore(32767, '\n');
-	cout << "Введите имя: ";
+	cout << "Введите новое имя: ";
 	getline(cin, name);
 
-	cout << "Введите количество оценок: ";
+	cout << "Введите количество знаков: ";
 	cin >> size;
 
+	//удалить оценку;
 	mark = new int[size];
 	cout << "Введите оценки: ";
 	for (int i = 0; i < size; i++)

@@ -6,9 +6,9 @@ Group::Group() {
 Group::Group(int n_size, int n_number) {
 	size = n_size;
 	number = n_number;
-	//cout << "!Группа конструкторов была вызвана" << endl;
+	cout << "!Группа конструкторов была вызвана" << endl;
 }
-Group::~Group() { /*cout << "!Группа деструкторов была вызвана" << endl; */ }
+Group::~Group() { cout << "!Группа деструкторов была вызвана" << endl; }
 int Group::get_size() { return size; }
 int Group::get_number() { return number; }
 Student* Group::get_data() { return data; }
@@ -47,7 +47,11 @@ void Group::insert(int ind) {
 }
 void Group::show() {
 	cout << "Номер группы: " << number << endl;
-	if (size != 0) {
+	if (size == 0) {
+		//cout << "There is nothing to show" << endl;
+		//exit(0);
+	}
+	else {
 		cout << "Средний балл: " << aver() << endl;
 	}
 

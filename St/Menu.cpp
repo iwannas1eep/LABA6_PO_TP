@@ -81,9 +81,9 @@ void Menu::average_stud() {
 int Menu::show_options()
 {
 	system("pause");
-	system ("cls");
+	system("cls");
 	int c1;
-	cout << "Задание 1" << endl;
+	cout << "Задание №1" << endl;
 	cout << "1 - Показать все группы" << endl;
 	cout << "2 - Добавить группу" << endl;
 	cout << "3 - Добавить нового студента" << endl;
@@ -92,7 +92,8 @@ int Menu::show_options()
 	cout << "6 - Отображение всех студентов, чей средний балл больше заданного; " << endl;
 	cout << "7 - Изменить группу" << endl;
 	cout << "8 - Изменить студента" << endl;
-	cout << "Задание 2" << endl;
+	//Для корректной работы необходимо ввести действительное число с двумя цифрами после точки
+	cout << "Задание №2" << endl;
 	cout << "9 - Сканирование файла" << endl;
 	cout << "0 - Выход" << endl;
 	cout << "-> ";
@@ -103,7 +104,7 @@ void Menu::show_all()
 {
 	try {
 		if (count == 0) {
-			throw "Пусто!";
+			throw "Нечего показывать";
 		}
 		for (int i = 0; i < count; i++) {
 			cout << "_" << endl;
@@ -121,7 +122,7 @@ void Menu::add_new_stud() {
 	while (fl == false)
 	{
 		try {
-			cin >>back;
+			getline(cin, back);
 			num = stoi(back);
 			fl = true;
 		}
@@ -129,6 +130,7 @@ void Menu::add_new_stud() {
 			cout << "Введите номер группы" << endl;
 		}
 	}
+
 	Student* student;
 	student = new Student;
 	student->rewrite();
@@ -208,7 +210,7 @@ void Menu::red_group() {
 			cout << "Введите номер группы" << endl;
 		}
 	}
-	cout << "Введите номер группы:" << endl;
+	cout << "Введите новое число:" << endl;
 	fl = false;
 	int num_n = 0;
 	while (fl == false) {
@@ -250,31 +252,8 @@ void Menu::red_student() {
 			cout << "Введите номер студента" << endl;
 		}
 	}
-	// Запрос нового имени для студента
-	string new_name;
-	cout << "Введите новое имя студента: ";
-	getline(cin, new_name);
-	list[num - 1].get_data()[num_stud - 1].set_name(new_name);
-
-	// Запрос нового номера для студента
-	int new_id;
-	cout << "Введите новый номер студента: ";
-	cin >> new_id;
-	list[num - 1].get_data()[num_stud - 1].ind(new_id);
-
-	// Запрос нового количества оценок и самих оценок для студента
-	int new_size;
-	cout << "Введите новое количество оценок: ";
-	cin >> new_size;
-	int* new_marks = new int[new_size];
-	cout << "Введите новые оценки: ";
-	for (int i = 0; i < new_size; i++) {
-		cin >> new_marks[i];
-	}
-	list[num - 1].get_data()[num_stud - 1].set_size(new_size);
-	list[num - 1].get_data()[num_stud - 1].set_mark(new_marks);
+	list[num - 1].get_data()[num_stud - 1].rewrite();
 }
-
 void Menu::exit_from_programm()
 {
 	exit = 0;

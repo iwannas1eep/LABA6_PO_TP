@@ -2,7 +2,6 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <string>
 #include "Student.h"
 #include "Menu.h"
 #include "Group.h"
