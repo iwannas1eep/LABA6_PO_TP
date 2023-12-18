@@ -17,8 +17,6 @@ public:
 	void set_size(int new_size);
 	void set_number(int new_number);
 
-	//Student* operator[](int index);
-
 	void insert(Student* new_Student);
 	void insert(int ind);
 	void show();
